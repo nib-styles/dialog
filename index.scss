@@ -1,0 +1,53 @@
+// Dialogs are controlled via JS. Refer to the Dialog
+// component for usage. By default dialogs are positioned absolute and are
+// always 100px from the top. The content area contains no padding so it
+// can contain any type of content you want. You'll often need to add a padding
+// class to the html. For display purposes the example markup does not use absolute positioning
+// so you'll need to remove the inline styles.
+// 
+// .is-closable - Makes the dialog closable. Shows the close button on the top right.
+// 
+// Styleguide 8.4
+.dialog {
+  @include transition(opacity 200ms ease-out-quad());
+  margin: 0 auto;
+  position: absolute;
+  top: 60px; // Left position calculated and applied via JS for IE bug
+  border: 1px solid #eee;
+  background: white;
+  z-index: 10000;
+  opacity: 1;
+  border: 7px solid lighten($border-color, 10%);
+  border-radius: 3px; 
+
+  .dialog__content {
+    padding: 15px 20px;
+  }
+
+  .dialog__close { 
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    text-decoration: none;
+    top: 10px;
+    z-index: 1000;
+    display: none;
+    opacity: 0.8;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &.is-closable .dialog__close {
+    display: block;
+  }
+
+  &.is-closed {
+    opacity: 0;
+  }
+
+  @include mobile {
+    top: 0;
+  }
+}

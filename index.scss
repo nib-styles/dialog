@@ -13,12 +13,11 @@
   margin: 0 auto;
   position: absolute;
   top: 60px; // Left position calculated and applied via JS for IE bug
-  border: 1px solid $dark-green;
   box-shadow: 0 0 20px rgba(black, 0.3);
   background: white;
   z-index: 10000;
   opacity: 1;
-  border: 7px solid lighten($border-color, 10%);
+  border: 7px solid $dark-green;
   border-radius: 3px;
 
   .dialog__content {
